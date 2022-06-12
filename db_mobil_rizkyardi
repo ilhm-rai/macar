@@ -1,0 +1,152 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Feb 17, 2021 at 04:51 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.3.26
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `dbmobil_rizkyardi`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `t_jenis_rizkyardi`
+--
+
+CREATE TABLE `t_jenis_rizkyardi` (
+  `id_jenis_rizkyardi` int(11) NOT NULL,
+  `jenis_rizkyardi` varchar(35) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `t_jenis_rizkyardi`
+--
+
+INSERT INTO `t_jenis_rizkyardi` (`id_jenis_rizkyardi`, `jenis_rizkyardi`) VALUES
+(1, 'LCGC'),
+(2, 'MPV'),
+(3, 'SUV'),
+(4, 'Sedan'),
+(5, 'Pickup'),
+(6, 'Wagon'),
+(7, 'Van');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `t_mobil_rizkyardi`
+--
+
+CREATE TABLE `t_mobil_rizkyardi` (
+  `no_plat_rizkyardi` varchar(11) NOT NULL,
+  `nama_mobil_rizkyardi` varchar(35) DEFAULT NULL,
+  `id_jenis_rizkyardi` int(11) DEFAULT NULL,
+  `tahun_rizkyardi` year(4) DEFAULT NULL,
+  `cc_rizkyardi` int(11) DEFAULT NULL,
+  `warna_rizkyardi` varchar(30) DEFAULT NULL,
+  `foto_rizkyardi` varchar(35) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `t_mobil_rizkyardi`
+--
+
+INSERT INTO `t_mobil_rizkyardi` (`no_plat_rizkyardi`, `nama_mobil_rizkyardi`, `id_jenis_rizkyardi`, `tahun_rizkyardi`, `cc_rizkyardi`, `warna_rizkyardi`, `foto_rizkyardi`) VALUES
+('B 1 DSA', 'Nissan Datsun Go Panca', 3, 2019, 1200, 'Merah', '602b78c0614f6.jpg'),
+('B 1132 K0X', 'Porche Panamera', 4, 2021, 2700, 'Biru', '602c8404202b0.jpg'),
+('B 6154 ABS', 'Toyota Fortuner TRD', 1, 2019, 1300, 'Abu-abu', '602c8c5a5656c.png'),
+('B 6154 WX1', 'Jeep Cherokee', 3, 2021, 1400, 'Maroon', '602c7f5ae354f.jpg'),
+('B 6232 KGA', 'Jeep Wrangler', 3, 2020, 2000, 'Merah', '602c7effbbf4b.jpg'),
+('B 9831 BAB', 'Nissan Magnite', 3, 2018, 1400, 'Merah', '602c84789fd08.jpg'),
+('D 123 A', 'Mitsubishi Pajero Sport', 3, 2021, 1200, 'Abu-abu', '602c7e8f36853.jpg'),
+('D 6252 AGX', 'Toyota Hilux', 5, 2017, 2700, 'Abu-abu Tua', '602c843c92fdf.jpg'),
+('D 6352 KG9', 'Hyundai Kona', 3, 2019, 1200, 'Kuning', '602c7f9534e09.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `t_user_rizkyardi`
+--
+
+CREATE TABLE `t_user_rizkyardi` (
+  `id` int(11) NOT NULL,
+  `fullname` varchar(255) NOT NULL,
+  `username` varchar(35) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `t_user_rizkyardi`
+--
+
+INSERT INTO `t_user_rizkyardi` (`id`, `fullname`, `username`, `password`) VALUES
+(3, 'Rizky Ardi Ilhami', 'rizky', '$2y$10$LA0vDc2o6xKxpTzHAO.KwehZrc1lda27o5eh9ou1H2QbwaFpkuIlK'),
+(4, 'Ikhsan Shiddiq', 'ikhsan', '$2y$10$P5hwlIovCgduVQc6URmM4.f72nT8pQWXHhXlXXuzJfl2AzR3rC8ZO');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `t_jenis_rizkyardi`
+--
+ALTER TABLE `t_jenis_rizkyardi`
+  ADD PRIMARY KEY (`id_jenis_rizkyardi`);
+
+--
+-- Indexes for table `t_mobil_rizkyardi`
+--
+ALTER TABLE `t_mobil_rizkyardi`
+  ADD PRIMARY KEY (`no_plat_rizkyardi`),
+  ADD KEY `id_jenis_rizkyardi` (`id_jenis_rizkyardi`);
+
+--
+-- Indexes for table `t_user_rizkyardi`
+--
+ALTER TABLE `t_user_rizkyardi`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `t_jenis_rizkyardi`
+--
+ALTER TABLE `t_jenis_rizkyardi`
+  MODIFY `id_jenis_rizkyardi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `t_user_rizkyardi`
+--
+ALTER TABLE `t_user_rizkyardi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `t_mobil_rizkyardi`
+--
+ALTER TABLE `t_mobil_rizkyardi`
+  ADD CONSTRAINT `t_mobil_rizkyardi_ibfk_1` FOREIGN KEY (`id_jenis_rizkyardi`) REFERENCES `t_jenis_rizkyardi` (`id_jenis_rizkyardi`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

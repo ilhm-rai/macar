@@ -1,0 +1,195 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto";
+    font-style: normal;
+    font-size: 14px;
+}
+
+main {
+    margin-top: 5px;
+}
+
+.bg-auth {
+    background-color: #e8e5ff;
+}
+
+.table-custom {
+    background-color: #fff;
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+.table-custom thead {
+    background-color: #337ab7;
+    color: white;
+}
+
+.table-custom thead th {
+    padding: 15px;
+}
+
+.table-custom thead th.align-left,
+.table-custom tbody td.align-left {
+    text-align: left;
+}
+
+.table-custom tbody tr {
+    text-align: center;
+}
+
+.table-custom td {
+    padding: 5px 15px;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+.btn {
+    padding: 12px 20px;
+    border-radius: 5px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: small;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2px;
+    border: 0;
+}
+
+input.btn {
+    border: 0;
+}
+
+.btn-danger {
+    background-color: #e0403a;
+    color: white;
+}
+
+.btn-info {
+    background-color: #42bde2;
+    color: white;
+}
+
+.btn-primary {
+    background-color: #337ab7;
+    color: white;
+}
+
+.btn-pill {
+    border-radius: 25px;
+}
+
+.mr-1 {
+    margin-right: 5px;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.justify-content-center{
+    justify-content: center;
+}
+
+.justify-content-right {
+    justify-content: right;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+
+.fb-50 {
+    padding: 5px;
+    flex-basis: 50%;
+}
+
+.search-custom {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    height: 40px;
+    padding: 5px 10px;
+}
+
+.form-custom {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    height: 40px;
+    font-size: 12px;
+    padding: 5px 10px;
+    width: 100%;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.btn-success {
+    background-color: #29bd5a;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #ddd;
+    color: black;
+}
+
+.img-preview {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 100px;
+    height: 100px;
+}
+
+.card {
+    padding: 25px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+    color: #337ab7;
+}
+
+.page{
+    padding: 2px 5px;
+    border-radius: 5px;
+    margin-left: 2px;
+    margin-right: 2px;
+    background-color: #e8e5ff;
+    color: black;
+}
+.page.active{
+    background-color: #337ab7;
+    color: white;
+}
